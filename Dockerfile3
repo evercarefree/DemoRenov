@@ -1,0 +1,10 @@
+# Dockerfile 3 (Non-vulnerable)
+FROM ubuntu:20.04
+
+RUN apt-get update && \
+    apt-get install -y \
+    openssl \
+    curl
+
+# Using the latest versions with no known vulnerabilities
+RUN apt-get install -y openssl

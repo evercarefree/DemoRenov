@@ -1,0 +1,13 @@
+# Dockerfile 1 (Vulnerable)
+FROM ubuntu:18.04
+
+RUN apt-get update && \
+    apt-get install -y \
+    openssl \
+    curl
+
+# Deliberately using an old version of OpenSSL with known vulnerabilities
+RUN apt-get install -y openssl=1.1.0g-2ubuntu4.3
+
+# Adding a fake AWS secret key
+RUN echo "AWS_SECRET_ACCESS_KEY=AKIAIOSFODNN7EXAMPLE" > /root/.aws/credentials
