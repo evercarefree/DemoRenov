@@ -6,5 +6,8 @@
   "dependencies": {
     "hot-formula-parser": "^3.0.0",
     "lodash": "^4.17.20"
+  },
+  "devDependencies": {
+    "nx": "18.3.5"
   }
 }
